@@ -7,8 +7,7 @@ namespace _Project.Map.Scripts
     internal static class Noise
     {
         internal static float[,] GenerateNoiseMap(
-            uint width,
-            uint height,
+            uint size,
             int seed,
             float scale, uint octaves,
             float persistance,
@@ -31,17 +30,17 @@ namespace _Project.Map.Scripts
                 octavesOffsets[i] = new Vector2(offsetX, offsetY);
             }
 
-            var map = new float[width, height];
+            var map = new float[size, size];
 
             var maxNoiseHeight = float.MinValue;
             var minNoiseHeight = float.MaxValue;
 
-            var halfWidth = width / 2;
-            var halfHeight = height / 2;
+            var halfWidth = size / 2;
+            var halfHeight = size / 2;
 
-            for (var j = 0; j < height; j++)
+            for (var j = 0; j < size; j++)
             {
-                for (var i = 0; i < width; i++)
+                for (var i = 0; i < size; i++)
                 {
                     var amplitude = 1f;
                     var frequency = 1f;
@@ -72,9 +71,9 @@ namespace _Project.Map.Scripts
                 }
             }
 
-            for (var j = 0; j < height; j++)
+            for (var j = 0; j < size; j++)
             {
-                for (var i = 0; i < width; i++)
+                for (var i = 0; i < size; i++)
                 {
                     map[i, j] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, map[i, j]);
                 }

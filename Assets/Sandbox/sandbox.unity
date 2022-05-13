@@ -367,7 +367,7 @@ Terrain:
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 90f8cd4d4a471446cb0620235c11ddff, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 5574c296b958b4662ab07923762e74ea, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -385,11 +385,11 @@ Transform:
   m_GameObject: {fileID: 621166434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 256, y: 1, z: 256}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626537198
 GameObject:
@@ -414,13 +414,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626537198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 512, y: 0, z: 512}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 112, y: 0, z: 112}
+  m_LocalScale: {x: 512, y: 1, z: 512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -661,8 +661,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.34657857, y: 0.3134235, z: -0.12409323, w: 0.87535703}
-  m_LocalPosition: {x: 49.301178, y: 684.5474, z: -51.297974}
+  m_LocalRotation: {x: 0.34657857, y: 0.31342348, z: -0.12409321, w: 0.87535703}
+  m_LocalPosition: {x: -91.02408, y: 513.4106, z: -166.47354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -922,29 +922,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57b1ee5daf26418caed47385bf9e4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depth: 45.93
   mode: 1
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.27601376
+      value: 0.07605421
+      inSlope: 0.38759956
+      outSlope: 0.38759956
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26999098
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.45170853
+      value: 0.18715414
+      inSlope: 1.7847761
+      outSlope: 1.7847761
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24333856
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   terrain: {fileID: 621166436}
   regions:
   - name: Water deep
-    height: 0.3
+    height: 0.05
     color: {r: 0.08802067, g: 0.33425048, b: 0.8113208, a: 1}
   - name: Water shallow
-    height: 0.4
+    height: 0.1
     color: {r: 0.24586153, g: 0.42291978, b: 0.8018868, a: 1}
   - name: Sand
-    height: 0.45
+    height: 0.17
     color: {r: 0.7924528, g: 0.7441542, b: 0.30277678, a: 1}
   - name: Grass 1
-    height: 0.55
+    height: 0.28
     color: {r: 0.09960287, g: 0.31132078, b: 0.019090435, a: 1}
   - name: Grass 2
-    height: 0.6
+    height: 0.38
     color: {r: 0.18830879, g: 0.49056602, b: 0.0763617, a: 1}
   - name: Rock 1
-    height: 0.7
+    height: 0.49
     color: {r: 0.3301887, g: 0.2292348, b: 0.18534178, a: 1}
   - name: Rock 2
-    height: 0.9
+    height: 0.63
     color: {r: 0.26415092, g: 0.17571895, b: 0.13830543, a: 1}
   - name: Snow
     height: 1
@@ -962,12 +1005,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: default
-  asIsland: 0
-  width: 100
-  height: 100
-  octaves: 4
-  noiseScale: 30
-  persistance: 0.5
+  asIsland: 1
+  size: 256
+  octaves: 15
+  noiseScale: 76.4
+  persistance: 0.388
   lacunarity: 2
   offset: {x: 0, y: 0}
   mapDisplay: {fileID: 1939314809}

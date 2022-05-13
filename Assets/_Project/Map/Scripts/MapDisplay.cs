@@ -13,20 +13,43 @@ namespace _Project.Map.Scripts
                 return;
             }
 
-            var width = noiseMap.GetLength(0);
-            var height = noiseMap.GetLength(1);
+            var size = noiseMap.GetLength(0);
 
             var texture = mode switch
             {
                 DrawMode.Noise => TextureGenerator.TextureFromHeightMap(noiseMap),
-                _ => TextureGenerator.TextureFromColorMap(CreateColorMap(noiseMap), width, height)
+                _ => TextureGenerator.TextureFromColorMap(CreateColorMap(noiseMap), size)
             };
 
             terrain.materialTemplate.mainTexture = texture;
-            terrain.transform.localScale = new Vector3(texture.width, 1, texture.height);
+
+            ApplyTerrain(noiseMap);
         }
 
         #endregion
+
+        private void ApplyTerrain(float[,] heightMap)
+        {
+            var size = heightMap.GetLength(0);
+            var terrainData = terrain.terrainData;
+
+            var map = new float[size, size];
+
+            for (var y = 0; y < size; y++)
+            {
+                for (var x = 0; x < size; x++)
+                {
+                    map[size - 1 - y, size - 1 - x] = heightCurve.Evaluate(heightMap[size - 1 - x, size - 1 - y]);
+                }
+            }
+
+            terrain.transform.localScale = new Vector3(size, 1, size);
+
+            terrainData.heightmapResolution = size;
+            terrainData.size = new Vector3(size, depth, size);
+            terrainData.SetHeights(0, 0, map);
+            terrain.Flush();
+        }
 
         #region Private methods
 
@@ -61,7 +84,9 @@ namespace _Project.Map.Scripts
 
         #endregion
 
+        [SerializeField] private float depth;
         [SerializeField] private DrawMode mode;
+        [SerializeField] private AnimationCurve heightCurve;
 
         [Space, SerializeField] private Terrain terrain;
 

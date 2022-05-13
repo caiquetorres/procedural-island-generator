@@ -4,16 +4,16 @@ namespace _Project.Map.Scripts
 {
     internal static class Falloff
     {
-        internal static float[,] GenerateFalloffMap(uint width, uint height)
+        internal static float[,] GenerateFalloffMap(uint size)
         {
-            var map = new float[width, height];
+            var map = new float[size, size];
 
-            for (var j = 0; j < height; j++)
+            for (var j = 0; j < size; j++)
             {
-                for (var i = 0; i < width; i++)
+                for (var i = 0; i < size; i++)
                 {
-                    var x = (float) i / width * 2 - 1;
-                    var y = (float) j / height * 2 - 1;
+                    var x = (float) i / size * 2 - 1;
+                    var y = (float) j / size * 2 - 1;
 
                     map[i, j] = Mathf.Max(Mathf.Abs(x), Mathf.Abs(y));
                 }

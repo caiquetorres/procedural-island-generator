@@ -8,8 +8,7 @@ namespace _Project.Map.Scripts
         internal void GenerateMap()
         {
             var noiseMap = Noise.GenerateNoiseMap(
-                width,
-                height,
+                size,
                 seed.GetHashCode(),
                 noiseScale,
                 octaves,
@@ -19,10 +18,10 @@ namespace _Project.Map.Scripts
 
             if (asIsland)
             {
-                var falloffMap = Falloff.GenerateFalloffMap(width, height);
-                for (var y = 0; y < height; y++)
+                var falloffMap = Falloff.GenerateFalloffMap(size);
+                for (var y = 0; y < size; y++)
                 {
-                    for (var x = 0; x < width; x++)
+                    for (var x = 0; x < size; x++)
                     {
                         noiseMap[x, y] = Mathf.Clamp01(noiseMap[x, y] - falloffMap[x, y]);
                     }
@@ -37,8 +36,7 @@ namespace _Project.Map.Scripts
         [SerializeField] private string seed;
 
         [Space, SerializeField] private bool asIsland;
-        [Min(1), SerializeField] private uint width;
-        [Min(1), SerializeField] private uint height;
+        [Min(1), SerializeField] private uint size = 100;
         [Min(1), SerializeField] private uint octaves;
         [Min(0.01f), SerializeField] private float noiseScale;
         [Range(0f, 1f), SerializeField] private float persistance;
