@@ -1,8 +1,9 @@
+using _Project.Navigation.Scripts;
 using UnityEngine;
 
 namespace _Project.Map.Scripts
 {
-    internal class Controller : MonoBehaviour
+    internal class Controller : SceneController
     {
         #region Private methods
 
@@ -13,8 +14,6 @@ namespace _Project.Map.Scripts
             controllerUI.Drag += orbit.ApplyDelta;
             controllerUI.Scroll += orbit.ApplyZoom;
         }
-
-        private void Start() => factory.Create();
 
         private void OnDisable()
         {
@@ -27,7 +26,6 @@ namespace _Project.Map.Scripts
         #endregion
 
         [SerializeField] private Orbit orbit;
-        [SerializeField] private Factory factory;
         [SerializeField] private ControllerUI controllerUI;
     }
 }
