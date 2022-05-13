@@ -14,6 +14,8 @@ namespace _Project.Map.Scripts
             controllerUI.Scroll += orbit.ApplyZoom;
         }
 
+        private void Start() => factory.Create();
+
         private void OnDisable()
         {
             controllerUI.Drag -= orbit.ApplyDelta;
@@ -25,6 +27,7 @@ namespace _Project.Map.Scripts
         #endregion
 
         [SerializeField] private Orbit orbit;
+        [SerializeField] private Factory factory;
         [SerializeField] private ControllerUI controllerUI;
     }
 }
