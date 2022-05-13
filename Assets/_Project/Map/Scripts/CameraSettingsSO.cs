@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace _Project.Map.Scripts
 {
+    /// <summary>
+    /// Scriptable object that handles all the camera settings.
+    /// </summary>
     [CreateAssetMenu(menuName = "Map/Camera/Settings", fileName = "new Camera Settings")]
     public class CameraSettingsSO : ScriptableObject
     {
