@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.Map.Scripts
+namespace _Project.OrbitalCamera.Scripts
 {
     /// <summary>
     /// Scriptable object that handles all the camera settings.

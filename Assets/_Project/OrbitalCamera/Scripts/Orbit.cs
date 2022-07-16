@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace _Project.Map.Scripts
+namespace _Project.OrbitalCamera.Scripts
 {
-    internal class Orbit : MonoBehaviour
+    public class Orbit : MonoBehaviour
     {
         #region Internal methods
 
@@ -57,12 +57,28 @@ namespace _Project.Map.Scripts
 
         #region Lifecycle
 
-        private void Awake() => _transform = transform;
+        private void Awake()
+        {
+            _transform = transform;
+            input = FindObjectOfType<InputUI>();
+        }
+
+        private void OnEnable()
+        {
+            input.DeltaChange += ApplyDelta;
+            input.Scroll += ApplyZoom;
+        }
 
         private void Start()
         {
             _targetRotation = _transform.eulerAngles;
             _distance = _targetDistance = settings.StartZoomDistance;
+        }
+
+        private void OnDisable()
+        {
+            input.DeltaChange -= ApplyDelta;
+            input.Scroll -= ApplyZoom;
         }
 
         private void LateUpdate()
@@ -86,9 +102,11 @@ namespace _Project.Map.Scripts
 
         private float _distance;
         private float _targetDistance;
+
         private Vector3 _targetRotation;
 
         private Transform _transform;
+        private InputUI input;
 
         [SerializeField] private CameraSettingsSO settings;
 

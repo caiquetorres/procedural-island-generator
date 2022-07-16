@@ -18,7 +18,7 @@ MonoBehaviour:
   minMaxXRotation: {x: -45, y: 45}
   rotateAroundY: 1
   minMaxYRotation: {x: 15, y: 90}
-  startZoomDistance: 750
-  minMaxZoomDistance: {x: 250, y: 750}
+  startZoomDistance: 250
+  minMaxZoomDistance: {x: 250, y: 500}
   zoomSensitivity: 10
   zoomSmoothness: 20

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace _Project.Map.Scripts
+namespace _Project.OrbitalCamera.Scripts
 {
     public class InputUI : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
@@ -16,7 +16,7 @@ namespace _Project.Map.Scripts
         /// <summary>
         /// Event that is called when the user scrolls the mouse wheel.
         /// </summary>
-        public event UnityAction<float> Scroll;
+        internal event UnityAction<float> Scroll;
 
         #endregion
 
