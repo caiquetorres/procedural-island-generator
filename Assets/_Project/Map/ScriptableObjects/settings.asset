@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e96f89746b004642b6975496ff629dc, type: 3}
+  m_Name: settings
+  m_EditorClassIdentifier: 
+  generateOnStart: 1
+  update: 1
+  size: 256
+  octaves: 16
+  depth: 46
+  persistance: 0.359
+  lacunarity: 2
+  noiseScale: 60
+  noiseOffset: {x: 0, y: 0}
+  seed: default
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2118353
+      value: 0.073704354
+      inSlope: 0.38759956
+      outSlope: 0.38759956
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26999098
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40693924
+      value: 0.18715414
+      inSlope: 1.7847761
+      outSlope: 1.7847761
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24333856
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.92398566
+      value: 0.97366303
+      inSlope: 0.67026293
+      outSlope: 0.67026293
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mode: 1
+  regions:
+  - name: Water deep
+    maxHeight: 0.05
+    color: {r: 0.08802067, g: 0.33425048, b: 0.8113208, a: 1}
+  - name: Water shallow
+    maxHeight: 0.1
+    color: {r: 0.24586153, g: 0.42291978, b: 0.8018868, a: 1}
+  - name: Sand
+    maxHeight: 0.17
+    color: {r: 0.7924528, g: 0.7441542, b: 0.30277678, a: 1}
+  - name: Grass 1
+    maxHeight: 0.28
+    color: {r: 0.09960287, g: 0.31132078, b: 0.019090435, a: 1}
+  - name: Grass 2
+    maxHeight: 0.38
+    color: {r: 0.18830879, g: 0.49056602, b: 0.0763617, a: 1}
+  - name: Rock 1
+    maxHeight: 0.49
+    color: {r: 0.3301887, g: 0.2292348, b: 0.18534178, a: 1}
+  - name: Rock 2
+    maxHeight: 0.63
+    color: {r: 0.26415092, g: 0.17571895, b: 0.13830543, a: 1}
+  - name: Snow
+    maxHeight: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
