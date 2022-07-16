@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.OrbitalCamera.Scripts
 {
-    public class Orbit : MonoBehaviour
+    internal class Orbit : MonoBehaviour
     {
         #region Internal methods
 
@@ -108,7 +108,7 @@ namespace _Project.OrbitalCamera.Scripts
         private Transform _transform;
         private InputUI input;
 
-        [SerializeField] private CameraSettingsSO settings;
+        [SerializeField] private SettingsSO settings;
 
         [Space, SerializeField] private Transform targetTransform;
     }

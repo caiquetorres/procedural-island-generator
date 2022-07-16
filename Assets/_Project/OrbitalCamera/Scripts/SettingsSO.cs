@@ -5,8 +5,8 @@ namespace _Project.OrbitalCamera.Scripts
     /// <summary>
     /// Scriptable object that handles all the camera settings.
     /// </summary>
-    [CreateAssetMenu(menuName = "Map/Camera/Settings", fileName = "new Camera Settings")]
-    public class CameraSettingsSO : ScriptableObject
+    [CreateAssetMenu(menuName = "Orbit/Settings", fileName = "new Orbit Settings")]
+    public class SettingsSO : ScriptableObject
     {
         #region Internal properties
 
